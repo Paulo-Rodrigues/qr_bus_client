@@ -1,23 +1,36 @@
 import React from 'react';
-import { StyledLines } from './styledLines';
+import { StyledLines, StyledList, StyledLi, StyledLinks } from './styledLines';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Lines() {
-  const [ dogneo, setDogneo ] = useState(null);
+  const [ lines, setLines ] = useState(null);
 
   useEffect(() => {
-    axios.get('https://dog.ceo/api/breeds/image/random')
-         .then(response => setDogneo(response.data))
+    axios.get('https://frozen-lowlands-61303.herokuapp.com')
+         .then(response => setLines(response.data))
   }, [])
 
-  if (!dogneo) return null;
+  if (!lines) return null;
 
   return (
     <>
       <StyledLines>
-        <h1>Lista de Linhas</h1>
-        <img src={dogneo.message} alt="dogneo" />
+        <h1>Linhas</h1>
+        <StyledList>
+          { lines.map(line => {
+            return (
+              <StyledLi key={`${line.id + Math.random()}`}>
+                <p>{ line.name }</p>
+                { `${line.from} até ${line.to}` }
+                <StyledLinks>
+                  <Link to={`/bus_lines/${line.id}`}>Detalhes</Link>
+                </StyledLinks>
+              </StyledLi>
+            )
+          }) }
+        </StyledList>
       </StyledLines>
     </>
   )

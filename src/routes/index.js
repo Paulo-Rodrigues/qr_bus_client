@@ -9,7 +9,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" exact element={<Lines />} />
       <Route path="/about" element={<About />} />
-      <Route path="/line_details" element={<LineDetails />} />
+      <Route path="/bus_lines/:id" element={<LineDetails />} />
     </Routes>
   )
 }
