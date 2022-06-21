@@ -18,7 +18,7 @@ export const StyledLine = styled.section`
   }
 `
 export const StyledTable = styled.table`
-margin-top: 5rem;
+margin-top: 1rem;
   color: #fff; 
   border: 1px solid #fff;
 
