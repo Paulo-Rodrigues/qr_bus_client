@@ -23,9 +23,8 @@ function LineDetails() {
         <StyledTable>
           <thead>
             <tr>
-                <th>{line.bus_line.name} | </th>
-                <th>{line.bus_line.from} {`>`} </th>
-                <th>{line.bus_line.to}</th>
+                <th>{line.bus_line.name}</th>
+                <th>{line.bus_line.from} {`>`} {line.bus_line.to}</th>
             </tr>
           </thead>
 
@@ -35,7 +34,6 @@ function LineDetails() {
                 <tr>
                   <td>{ track.start_time }</td>
                   <td>{ track.end_time }</td>
-                  <td>$7.00</td>
                 </tr>
               )
             }) }

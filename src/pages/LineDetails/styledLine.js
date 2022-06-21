@@ -29,5 +29,6 @@ margin-top: 5rem;
   td {
     border: 1px solid #fff;
     padding: 8px;
+    text-align: center;
   }
 `;
