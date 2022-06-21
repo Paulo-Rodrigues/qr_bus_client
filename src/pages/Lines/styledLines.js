@@ -16,6 +16,7 @@ export const StyledLi = styled.li`
   padding: 1rem;
   border: 1px solid #333;
   border-radius: 5px;
+  margin: 10px;
 `;
 
 export const StyledLinks = styled.div`
